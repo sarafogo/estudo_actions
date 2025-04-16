@@ -1,0 +1,27 @@
+# Build artifacts
+bin/
+obj/
+
+# User-specific files
+.vs/
+.vscode/
+*.user
+*.suo
+*.csproj.user
+
+# Logs
+*.log
+
+# NuGet packages
+packages/
+
+# Certificates
+*.pfx
+*.p12
+
+# Publish output
+publish/
+
+# OS-specific files
+Thumbs.db
+.DS_Store
