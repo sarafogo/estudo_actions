@@ -14,13 +14,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
         with:
-          node-version: '16'
+          dotnet-version: '8.0.x' # Substitua pela versão do .NET que você está usando
 
-      - name: Install dependencies
-        run: npm install
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build project
+        run: dotnet build --no-restore --configuration Release
 
       - name: Run tests
-        run: npm test
+        run: dotnet test --no-build --verbosity normal
